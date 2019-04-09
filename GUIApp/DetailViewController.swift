@@ -14,7 +14,7 @@ protocol DetailViewControllerDelegate: class {
     
 }
 
-class DetailViewController: UIViewController {
+class DetailViewController: UITableViewController {
     var copyOfOriginalExpense: Location?
     var location: Location?
     weak var delegate: DetailViewControllerDelegate?
