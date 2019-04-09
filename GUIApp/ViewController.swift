@@ -72,7 +72,7 @@ class ViewController: UITableViewController, UITextFieldDelegate, DetailViewCont
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
-    
+    //Inserts objects into rows
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
         let i = indexPath.row
