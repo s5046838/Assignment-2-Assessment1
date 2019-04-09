@@ -83,14 +83,14 @@ class ViewController: UITableViewController, UITextFieldDelegate, DetailViewCont
         return cell
         
     }
-
+    //deletes rows
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .insert { addObject(self) ; return }
         guard editingStyle == .delete else { return }
         objects.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
-    
+    //Moves rows
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let object = objects.remove(at: sourceIndexPath.row)
         objects.insert(object, at: destinationIndexPath.row)
