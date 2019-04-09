@@ -15,20 +15,22 @@ class GUIAppTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testaddObject() {
+        let location = Location(name:"Location", address: "Address", latitude: 209, longitude: 50)
+        XCTAssertEqual(location.name, "Location")
+        XCTAssertEqual(location.address, "Address")
+        XCTAssertEqual(location.latitude, 209)
+        XCTAssertEqual(location.longitude, 50)
     }
+    
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testaddObjectnil() {
+        let location = Location(name:"Location", address: "Address", latitude: 209, longitude: 50)
+        XCTAssertNotNil(location.name, "Location")
+        XCTAssertNotNil(location.address, "Address")
+        XCTAssertNotNil(location.latitude, String(0))
+        XCTAssertNotNil(location.longitude, String(0))
     }
 
 }
